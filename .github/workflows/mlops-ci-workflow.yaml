@@ -35,13 +35,13 @@ jobs:
     - name: Do Feature Engineering
       run: |
         python src/features/engineer.py \
-        --input data/processed/cleaned_house_data.csv \ 
+        --input data/processed/cleaned_house_data.csv \
         --output data/processed/featured_house_data.csv \
         --preprocessor models/trained/preprocessor.pkl
 
     - name: Train the model
       run: |
-        python src/models/train_model.py \ 
+        python src/models/train_model.py \
         --config configs/model_config.yaml \
         --data data/processed/featured_house_data.csv \
         --models-dir models \
